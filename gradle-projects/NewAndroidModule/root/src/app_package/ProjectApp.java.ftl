@@ -3,6 +3,7 @@ package ${packageName};
 import android.app.Application;
 
 import com.github.mmin18.layoutcast.LayoutCast;
+import com.jiongbull.jlog.JLog;
 
 /**
  * Project Application
