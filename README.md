@@ -30,7 +30,7 @@ Copy the appropriate folders into `<androidStudio-folder>/plugins/android/lib/te
   
   > develop with sdk 21 for faster compile
 
-* add **lintOptions** with no `abortOnError`
+* add **lintOptions** with disable `abortOnError`
   
   > useful in some case
 
