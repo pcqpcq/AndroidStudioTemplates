@@ -4,7 +4,7 @@
 
 ## Usage
 
-Copy the appropriate folders into <androidStudio-folder>/plugins/android/lib/templates/ and they will work when you create new project/module.
+Copy the appropriate folders into `<androidStudio-folder>/plugins/android/lib/templates/` and they will work when you create new project/module.
 
 ------
 
