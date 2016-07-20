@@ -102,4 +102,6 @@ dependencies {
 <#if unitTestsSupported>
     testCompile 'junit:junit:${junitVersion}'
 </#if>
+    compile 'com.github.mmin18.layoutcast:library:1.+@aar'
+    compile 'com.jiongbull:jlog:1.0.5'
 }

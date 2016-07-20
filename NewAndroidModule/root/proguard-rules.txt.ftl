@@ -18,3 +18,7 @@
 
 # gradle-retrolambda
 -dontwarn java.lang.invoke.*
+
+# jlog
+-keepattributes SourceFile, LineNumberTable
+-keep class com.jiongbull.jlog.** { *; }

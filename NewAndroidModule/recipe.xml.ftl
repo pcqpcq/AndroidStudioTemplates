@@ -15,6 +15,8 @@
                    to="${escapeXmlAttribute(projectOut)}/build.gradle" />
     <instantiate from="root/AndroidManifest.xml.ftl"
                    to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
+    <instantiate from="root/src/app_package/ProjectApp.java.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/ProjectApp.java" />
 
 <mkdir at="${escapeXmlAttribute(resOut)}/drawable" />
 <#if copyIcons && !isLibraryProject>
