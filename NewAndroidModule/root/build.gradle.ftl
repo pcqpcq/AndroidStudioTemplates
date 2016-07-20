@@ -32,14 +32,6 @@ repositories {
 }
 </#if>
 
-// CUSTOM TEMPLATE:
-// 1. enable parallel & daemon
-// 2. git ignore .idea
-// 3. enable gradle-retrolambda
-// 4. enable dataBinding
-// 5. enable productFlavors diff with minSdkVersion in dev & publish
-// 6. enable lintOptions with no abortOnError
-
 android {
     compileSdkVersion <#if buildApiString?matches("^\\d+$")>${buildApiString}<#else>'${buildApiString}'</#if>
     buildToolsVersion "${buildToolsVersion}"
@@ -55,11 +47,9 @@ android {
         versionName "1.0"
     }
     productFlavors {
-        // 开发版
         dev {
             minSdkVersion 21
         }
-        // 发布版
         publish {
             minSdkVersion 16
         }
@@ -68,11 +58,25 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    if(project.hasProperty("RELEASE_STORE_FILE")) {
+        signingConfigs {    
+           release {
+               storeFile file(RELEASE_STORE_FILE)
+               storePassword RELEASE_STORE_PASSWORD
+               keyAlias RELEASE_KEY_ALIAS
+               keyPassword RELEASE_KEY_PASSWORD
+           }
+        }
+    }
 <#if enableProGuard>
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if(project.hasProperty("RELEASE_STORE_FILE")) {
+                shrinkResources true
+                signingConfig signingConfigs.release
+            }
         }
     }
 </#if>
