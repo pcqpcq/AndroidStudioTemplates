@@ -17,3 +17,8 @@
 # http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
 org.gradle.parallel=true
 org.gradle.daemon=true
+
+# RELEASE_STORE_FILE=
+# RELEASE_STORE_PASSWORD=
+# RELEASE_KEY_ALIAS=
+# RELEASE_KEY_PASSWORD=
