@@ -2,7 +2,9 @@ package ${packageName};
 
 import android.app.Application;
 
+<#if isLibraryProject?? && !isLibraryProject>
 import com.github.mmin18.layoutcast.LayoutCast;
+</#if>
 import com.jiongbull.jlog.JLog;
 
 /**
@@ -14,7 +16,9 @@ public class ProjectApp extends Application {
         super.onCreate();
 
         if (BuildConfig.DEBUG) {
-            LayoutCast.init(this);
+        	<#if isLibraryProject?? && !isLibraryProject>
+        	LayoutCast.init(this);
+            </#if>
 	        JLog.init(this);
         }
     }
