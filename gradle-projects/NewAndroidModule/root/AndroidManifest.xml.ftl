@@ -12,7 +12,9 @@
         <#if baseTheme != "none" && !isLibraryProject>
         android:theme="@style/AppTheme"</#if>>
 
-        <activity android:name="com.github.mmin18.layoutcast.ResetActivity" />
+        <#if isLibraryProject?? && !isLibraryProject>
+            <activity android:name="com.github.mmin18.layoutcast.ResetActivity" />
+        </#if>
     </application>
 
 </manifest>
